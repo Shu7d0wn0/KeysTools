@@ -155,7 +155,7 @@ sudo systemctl status gunicorn
 9. Test de l'API
 Testez l'API localement et à distance :
 ```
-curl -X POST http://127.0.0.1:5001/generate_key
+curl -X POST http://127.0.0.1:5001/generate_key -H "Content-Type: application/json" -d '{"duration": 1}'
 curl -X POST http://127.0.0.1:5001/validate_key -H "Content-Type: application/json" -d '{"key":"your_generated_key"}'
 curl -X POST http://[your_ipv6_address]/generate_key
 curl -X POST http://[your_ipv6_address]/validate_key -H "Content-Type: application/json" -d '{"key":"your_generated_key"}'

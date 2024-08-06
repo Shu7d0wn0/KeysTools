@@ -96,7 +96,8 @@ Insérez le code "api.py" qui est dans Github
 ```
 tmux new -s api
 source myenv/bin/activate
-python3 api.py 
+sudo ufw allow 5001/tcp
+gunicorn -w 4 -b 0.0.0.0:5001 api:app
 ```
 7. Configuration de Nginx
 ```

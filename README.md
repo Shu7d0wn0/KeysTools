@@ -92,21 +92,21 @@ nano api.py
 ```
 Insérez le code "api.py" qui est dans Github
 
-6. Démarrage de Flask avec Gunicorn
+6. Démarrage de Flask avec Gunicorn (sorir fenetre tnux : CTRL + B  relaché puis D)
 ```
 tmux new -s api
 source myenv/bin/activate
-gunicorn -w 4 -b 0.0.0.0:5001 api:app
+python3 api.py 
 ```
 7. Configuration de Nginx
 ```
 sudo nano /etc/nginx/sites-available/myapp
 ```
-Insérez la configuration suivante :
+Insérez la configuration suivante : (comande pour avoir adresse ipv6 :  curl -6 ifconfig.co)
 ```
 server {
     listen 80;
-    server_name your_ipv6_address;
+    server_name your_ipv6_address (votre adresse ipv6 ;
 
     location / {
         proxy_pass http://127.0.0.1:5001;
